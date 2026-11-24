@@ -1,0 +1,466 @@
+/* Thinking fold — peeled from chat.css */
+
+.thinking-fold {
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.thinking-fold-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.1rem 0.05rem;
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: var(--muted-2);
+  cursor: pointer;
+  text-align: left;
+}
+
+.thinking-fold-summary:hover {
+  color: var(--muted);
+  background: transparent;
+}
+
+.thinking-fold-chevron {
+  font-size: 0.6rem;
+  color: var(--muted-2);
+  width: 0.7rem;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.thinking-fold-title {
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 450;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted-2);
+  flex-shrink: 0;
+}
+
+.thinking-fold.is-live .thinking-fold-title {
+  color: var(--muted);
+}
+
+.thinking-fold-meta {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.74rem;
+  color: color-mix(in srgb, var(--muted-2) 88%, transparent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.thinking-fold-live {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--muted-2);
+  opacity: 0.7;
+}
+
+.thinking-fold-live-chevron {
+  display: block;
+  animation: think-chevron-breathe 1.4s ease-in-out infinite;
+}
+
+@keyframes think-chevron-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.thinking-fold-list {
+  list-style: none;
+  margin: 0.15rem 0 0;
+  padding: 0.1rem 0 0.25rem 0.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: none;
+  max-height: 16rem;
+  overflow: auto;
+  position: relative;
+}
+
+.thinking-fold-line {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.22rem 0 0.22rem 0.12rem;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--muted-2) 92%, transparent);
+  animation: thinking-step-in 0.3s var(--ease-out) both;
+}
+
+/* Vertical track (Julius step rail) */
+.thinking-fold-line:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 0.4rem;
+  top: 1.1rem;
+  bottom: -0.05rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--border) 70%, transparent);
+  pointer-events: none;
+}
+
+.thinking-fold-line.is-active {
+  color: var(--muted);
+  font-weight: 450;
+}
+
+.thinking-fold-line.is-done {
+  color: color-mix(in srgb, var(--muted-2) 92%, var(--ink));
+}
+
+.thinking-fold-line.is-upcoming {
+  color: color-mix(in srgb, var(--muted-2) 75%, transparent);
+  opacity: 0.72;
+}
+
+.thinking-fold-line.is-skipped {
+  color: var(--muted-2);
+  opacity: 0.72;
+}
+
+.thinking-fold-line.is-skipped .thinking-fold-text {
+  text-decoration: none;
+  font-style: italic;
+}
+
+.thinking-fold-sublist {
+  list-style: none;
+  margin: 0.15rem 0 0.2rem;
+  padding: 0 0 0 1.1rem;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.thinking-fold-sub {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: 0.78em;
+  color: var(--muted-2);
+  padding: 0.08rem 0;
+}
+
+.thinking-fold-sub.is-active {
+  color: var(--muted);
+}
+
+.thinking-fold-sub.is-done {
+  opacity: 0.85;
+}
+
+.thinking-fold-sub.is-skipped {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.thinking-fold-skip-mark {
+  font-size: 0.7rem;
+  line-height: 1.15rem;
+  color: var(--muted-2);
+}
+
+.thinking-fold-pause {
+  display: block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 1px;
+  background: color-mix(in srgb, var(--muted) 70%, transparent);
+}
+
+.thinking-fold-hint {
+  margin: 0.35rem 0 0.1rem 1.35rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.78rem;
+  color: var(--danger, #8b3a2a);
+  border-left: 2px solid color-mix(in srgb, var(--danger, #8b3a2a) 55%, var(--rule));
+  background: color-mix(in srgb, var(--danger, #8b3a2a) 6%, transparent);
+}
+
+.thinking-fold.is-frozen .thinking-fold-title {
+  color: var(--muted);
+}
+
+.thinking-fold-dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--muted-2) 55%, transparent);
+}
+
+.thinking-fold-film {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0.15rem 1.35rem;
+  max-width: min(100%, 22rem);
+  overflow-x: auto;
+  padding-bottom: 0.15rem;
+  scrollbar-width: thin;
+}
+
+.thinking-fold-frame {
+  flex: 0 0 auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--surface, #fff) 92%, var(--muted-2));
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  animation: thinking-film-in 0.35s ease forwards;
+}
+
+.thinking-fold.is-reduced .thinking-fold-frame {
+  opacity: 1;
+  animation: none;
+}
+
+.thinking-fold-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thinking-fold-frame:hover,
+.thinking-fold-frame:focus-visible {
+  border-color: var(--muted);
+  outline: none;
+}
+
+@keyframes thinking-film-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.thinking-fold-recap {
+  margin: 0.4rem 0 0.1rem 1.35rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+.thinking-fold-chips {
+  display: none; /* phase 2B: plaques removed — keep rule inert if stale markup */
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.2rem 0.15rem 0.35rem 1.35rem;
+}
+
+.thinking-fold-chip {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.45rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 8%, transparent);
+  animation: thinking-chip-in 0.35s ease-out;
+}
+
+.thinking-fold.is-reduced .thinking-fold-chip {
+  animation: none;
+}
+
+@keyframes thinking-chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.thinking-fold-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.85rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  color: var(--muted-2);
+  position: relative;
+  z-index: 1;
+}
+
+.thinking-fold-line.is-done .thinking-fold-mark {
+  color: color-mix(in srgb, var(--muted) 70%, var(--primary));
+  opacity: 0.85;
+}
+
+.thinking-fold-line.is-active .thinking-fold-mark {
+  color: var(--primary);
+}
+
+.thinking-fold-spin {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: 1.5px solid color-mix(in srgb, var(--primary) 28%, var(--rule));
+  border-top-color: var(--primary);
+  animation: thinking-spin 0.7s linear infinite;
+}
+
+.thinking-fold-text {
+  min-width: 0;
+  padding-top: 0.05rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thinking-fold-spin,
+  .thinking-fold-live-chevron,
+  .thinking-fold-chip {
+    animation: none;
+  }
+  .thinking-fold-line {
+    animation: none;
+  }
+}
+
+.chart-card-ui {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.chart-card-ui.has-meta .chart-card-ui-head {
+  padding: 1rem 1.15rem 0.65rem;
+}
+
+.chart-card-ui-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.chart-card-ui-insight {
+  margin: 0 0 0.55rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.chart-card-ui-highlights {
+  list-style: none;
+  margin: 0 0 0.45rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.chart-card-ui-highlights li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+}
+
+.chart-card-ui-hl-label {
+  color: var(--ink-2);
+}
+
+.chart-card-ui-hl-nums {
+  display: flex;
+  gap: 0.45rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.chart-card-ui-hl-nums strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.chart-card-ui-source {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.chart-card-ui-viz {
+  padding: 0.35rem 0.55rem 0.75rem;
+}
+
+.chart-card-ui-viz .report-fig-frame {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rail-print-hint {
+  margin: 0;
+  padding: 0.35rem 1rem 0;
+  font-size: 0.72rem;
+  color: var(--muted-2);
+}
+
+.composer-summary {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  letter-spacing: 0.01em;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .liber-sidebar:not(.is-collapsed) {
+    width: min(var(--sidebar-w), 72vw);
+  }
+
+  .app.chat-app {
+    padding: 0.35rem;
+  }
+
+  .app-shell {
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .context-plaque,
+  .app,
+  .pdf-skeleton-shine,
+  .report-pdf-page canvas.is-shown,
+  .liber-sidebar {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* —— Semantic diagrams (UI-only Mermaid) —— */

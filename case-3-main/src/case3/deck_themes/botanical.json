@@ -1,0 +1,38 @@
+{
+  "id": "botanical",
+  "label": "Dark Botanical",
+  "colors": {
+    "primary": "#4A7C66",
+    "accent": "#C4AD7A",
+    "ink": "#EDE7D9",
+    "ink2": "#C2CEC3",
+    "muted": "#92A698",
+    "paper": "#182B23",
+    "sheet": "#101F19",
+    "rule": "#2B4438",
+    "foil": "#C4AD7A",
+    "background": "#101F19",
+    "text": "#EDE7D9",
+    "panel": "#182B23"
+  },
+  "fonts": {
+    "title": "Georgia",
+    "body": "Calibri",
+    "fallback_pptx": "Calibri"
+  },
+  "chart_series": ["#C4AD7A", "#52B788", "#E07A5F"],
+  "table": {
+    "header_fill": "#182B23",
+    "header_ink": "#EDE7D9",
+    "body_fill": "#24382E",
+    "grid": "#2B4438"
+  },
+  "brand_mark": "",
+  "motif": {
+    "atmosphere": "dark",
+    "hero_bleed": true,
+    "foil_cards": true,
+    "card_fill": "#182B23",
+    "panels": ["#182B23", "#1F352B", "#233B30", "#162820"]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "signal",
+  "label": "Bold Signal",
+  "colors": {
+    "primary": "#24211E",
+    "accent": "#E86A33",
+    "ink": "#F7F2EB",
+    "ink2": "#D8CFC4",
+    "muted": "#A89D91",
+    "paper": "#23201D",
+    "sheet": "#181614",
+    "rule": "#36312C",
+    "foil": "#F2A93B",
+    "background": "#181614",
+    "text": "#F7F2EB",
+    "panel": "#26221E"
+  },
+  "fonts": {
+    "title": "Georgia",
+    "body": "Segoe UI",
+    "fallback_pptx": "Calibri"
+  },
+  "chart_series": [
+    "#E86A33",
+    "#F2A93B",
+    "#38A889",
+    "#E5C697"
+  ],
+  "table": {
+    "header_fill": "#E86A33",
+    "header_ink": "#181614",
+    "body_fill": "#23201D",
+    "grid": "#36312C"
+  },
+  "brand_mark": "",
+  "motif": {
+    "atmosphere": "dark",
+    "split": 0.55,
+    "foil_cards": true,
+    "card_fill": "#23201D",
+    "panels": [
+      "#23201D",
+      "#2A241F",
+      "#1F2623",
+      "#2B231D"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "launch",
+  "label": "Product Launch",
+  "blurb": "Bleed title → story callouts → GTM table → ask",
+  "default_pack": "botanical",
+  "tone": "dark",
+  "slides": [10, 12],
+  "arc": [
+    "title",
+    "section",
+    "callout",
+    "card_row",
+    "media_hero",
+    "table_hero",
+    "scorecard",
+    "card_row",
+    "closing"
+  ],
+  "signature": "photo bleed · story · soft foil"
+}

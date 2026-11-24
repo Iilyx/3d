@@ -1,0 +1,37 @@
+{
+  "id": "relay",
+  "label": "Split Pastel — Розовый кварц и гранат",
+  "colors": {
+    "primary": "#5C2A24",
+    "accent": "#C45B46",
+    "ink": "#2C1D1A",
+    "ink2": "#6B4F49",
+    "muted": "#8A6D66",
+    "paper": "#F7EFEA",
+    "sheet": "#FDF9F6",
+    "rule": "#E8DAD2",
+    "foil": "#D4884E",
+    "background": "#FDF9F6",
+    "text": "#2C1D1A",
+    "panel": "#FADFD8"
+  },
+  "fonts": {
+    "title": "Georgia",
+    "body": "Aptos",
+    "fallback_pptx": "Calibri"
+  },
+  "chart_series": ["#C45B46", "#D4884E", "#3B7A6B", "#5C2A24"],
+  "table": {
+    "header_fill": "#5C2A24",
+    "header_ink": "#FDF9F6",
+    "body_fill": "#F7EFEA",
+    "grid": "#E8DAD2"
+  },
+  "brand_mark": "",
+  "motif": {
+    "atmosphere": "light",
+    "split": 0.55,
+    "panel_key": "panel",
+    "panels": ["#FADFD8", "#F9EAE0", "#E2F0EB", "#F5EFE6"]
+  }
+}

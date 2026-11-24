@@ -1,0 +1,38 @@
+{
+  "id": "board",
+  "label": "Northstar Sapphire & Silk",
+  "colors": {
+    "primary": "#172D40",
+    "accent": "#226496",
+    "ink": "#122334",
+    "ink2": "#354F69",
+    "muted": "#627C96",
+    "paper": "#F2EDE4",
+    "sheet": "#FAF7F2",
+    "rule": "#DED8CE",
+    "foil": "#D96B43",
+    "background": "#FAF7F2",
+    "text": "#122334",
+    "panel": "#172D40"
+  },
+  "fonts": {
+    "title": "Georgia",
+    "body": "Calibri",
+    "fallback_pptx": "Calibri"
+  },
+  "chart_series": ["#172D40", "#226496", "#D96B43", "#2A8C72"],
+  "table": {
+    "header_fill": "#172D40",
+    "header_ink": "#FAF7F2",
+    "body_fill": "#F2EDE4",
+    "grid": "#DED8CE"
+  },
+  "brand_mark": "",
+  "motif": {
+    "atmosphere": "light",
+    "split": 0.55,
+    "foil_cards": true,
+    "card_fill": "#FFFFFF",
+    "panels": ["#FFFFFF", "#F4EFE6", "#EBF3F8", "#FBF0EB"]
+  }
+}

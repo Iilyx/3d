@@ -1,0 +1,26 @@
+{
+  "id": "qbr",
+  "label": "Split Pastel — Квартальный и продуктовый обзор",
+  "blurb": "15 макетов: Две пастельные главы → Bento-карточки → каналы → победы и блокеры → план Q+1 → схема",
+  "default_pack": "relay",
+  "tone": "light",
+  "slides": [10, 15],
+  "arc": [
+    "title",
+    "section",
+    "scorecard",
+    "chart_hero",
+    "chart_split",
+    "card_row",
+    "callout",
+    "section",
+    "compare",
+    "table_hero",
+    "stat_hero",
+    "timeline",
+    "media_split",
+    "media_hero",
+    "closing"
+  ],
+  "signature": "two-chapters · terracotta-blush · pastel-bento · qbr-gates"
+}

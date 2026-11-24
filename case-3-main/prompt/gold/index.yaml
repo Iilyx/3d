@@ -1,0 +1,24 @@
+# Tag → gold file. Pipeline picks top 2–3 by overlap with intent keywords.
+items:
+  - id: full_minimal
+    file: full_minimal.tex
+    tags: [default, report, structure, skeleton]
+  - id: table_booktabs
+    file: 02_table.tex
+    tags: [table, tabular, numbers, report, kpi]
+  - id: lists_sections
+    file: 03_lists_sections.tex
+    tags: [list, sections, enumerate, itemize, steps]
+  - id: no_table_prose
+    file: no_table_prose.tex
+    tags: [memo, short, prose, no_table]
+  - id: escape_specials
+    file: escape_specials.tex
+    tags: [escape, symbols, percent, underscore]
+  - id: image_slot
+    file: image_slot.tex
+    tags: [image, figure, picture, photo, illustration, slot]
+  # Slot placement only — avoid over-matching every bar/line mention (HTML is free-form).
+  - id: chart_slot
+    file: chart_slot.tex
+    tags: [chart, graph, chart_slot, numbers]

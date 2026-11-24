@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-width: 1920px;
+      min-height: 1080px;
+      width: max-content;
+      height: max-content;
+      background: transparent;
+      overflow: visible;
+    }
+    #wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      box-sizing: border-box;
+    }
+    #diagram {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    #diagram svg {
+      /* sized in JS after render — leave room for stroke/text */
+      overflow: visible;
+    }
+    .edgeLabel, .edgeLabel span, .edgeLabel p {
+      background: {{LABEL_BG}} !important;
+      color: {{TEXT_COLOR}} !important;
+      font-weight: 600 !important;
+      border-radius: 4px !important;
+      padding: 1px 6px !important;
+    }
+    .edgeLabel rect, .labelBkg {
+      fill: {{LABEL_BG}} !important;
+      background: {{LABEL_BG}} !important;
+      opacity: 0.96 !important;
+    }
+    .cluster rect {
+      rx: 16px !important;
+      ry: 16px !important;
+      stroke-width: 1.5px !important;
+    }
+    .node rect, .node polygon, .node circle {
+      stroke-width: 2.2px !important;
+    }
+    .nodeLabel, .label {
+      font-weight: 600 !important;
+    }
+    /* Sequence, state, mindmap, and timeline legibility across light & dark packs */
+    .messageText, .loopText, .loopText > tspan, .labelText, .labelText > tspan,
+    .noteText, .noteText > tspan, .actor, text.actor > tspan,
+    .statediagram-state .nodeLabel, .mindmap-node text, .mindmap-node span,
+    .sectionTitle, .taskText, .taskTextOutsideRight, .taskTextOutsideLeft {
+      fill: {{TEXT_COLOR}} !important;
+      color: {{TEXT_COLOR}} !important;
+      font-weight: 600 !important;
+    }
+    rect.actor, .actor-man line, .actor-man circle {
+      fill: {{START_FILL}} !important;
+      stroke: {{START_STROKE}} !important;
+      stroke-width: 2px !important;
+      rx: 10px !important;
+      ry: 10px !important;
+    }
+    rect.note {
+      fill: {{DECISION_FILL}} !important;
+      stroke: {{DECISION_STROKE}} !important;
+      rx: 8px !important;
+      ry: 8px !important;
+    }
+    .labelBox {
+      fill: {{CLUSTER_FILL}} !important;
+      stroke: {{CLUSTER_BORDER}} !important;
+    }
+    .loopLine {
+      stroke: {{CLUSTER_BORDER}} !important;
+    }
+    .messageLine0, .messageLine1, .actor-line, .transition {
+      stroke: {{LINE_COLOR}} !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap"><div id="diagram" class="mermaid">{{MERMAID}}</div></div>
+  <script src="mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "strict",
+      flowchart: {
+        htmlLabels: true,
+        curve: "basis",
+        padding: 22,
+        nodeSpacing: 52,
+        rankSpacing: 60,
+        useMaxWidth: false
+      },
+      sequence: {
+        useMaxWidth: false,
+        boxMargin: 14,
+        mirrorActors: false,
+        messageMargin: 42,
+        actorMargin: 64
+      },
+      state: {
+        useMaxWidth: false,
+        padding: 16
+      },
+      mindmap: {
+        useMaxWidth: false,
+        padding: 18
+      },
+      timeline: {
+        useMaxWidth: false
+      },
+      themeVariables: {
+        fontSize: "22px",
+        fontFamily: "system-ui, -apple-system, 'Segoe UI', Calibri, sans-serif",
+        primaryColor: "{{NODE_FILL}}",
+        primaryTextColor: "{{TEXT_COLOR}}",
+        primaryBorderColor: "{{PRIMARY}}",
+        lineColor: "{{LINE_COLOR}}",
+        secondaryColor: "{{DECISION_FILL}}",
+        secondaryTextColor: "{{TEXT_COLOR}}",
+        secondaryBorderColor: "{{DECISION_STROKE}}",
+        tertiaryColor: "{{OK_FILL}}",
+        tertiaryTextColor: "{{TEXT_COLOR}}",
+        tertiaryBorderColor: "{{OK_STROKE}}",
+        background: "transparent",
+        mainBkg: "{{NODE_FILL}}",
+        nodeBorder: "{{PRIMARY}}",
+        clusterBkg: "{{CLUSTER_FILL}}",
+        clusterBorder: "{{CLUSTER_BORDER}}",
+        titleColor: "{{TEXT_COLOR}}",
+        edgeLabelBackground: "transparent",
+        actorBkg: "{{START_FILL}}",
+        actorBorder: "{{START_STROKE}}",
+        actorTextColor: "{{TEXT_COLOR}}",
+        actorLineColor: "{{LINE_COLOR}}",
+        signalColor: "{{LINE_COLOR}}",
+        signalTextColor: "{{TEXT_COLOR}}",
+        labelBoxBkgColor: "{{CLUSTER_FILL}}",
+        labelBoxBorderColor: "{{CLUSTER_BORDER}}",
+        labelTextColor: "{{TEXT_COLOR}}",
+        loopTextColor: "{{TEXT_COLOR}}",
+        noteBkgColor: "{{DECISION_FILL}}",
+        noteTextColor: "{{TEXT_COLOR}}",
+        noteBorderColor: "{{DECISION_STROKE}}",
+        altBackground: "{{CLUSTER_FILL}}",
+        stateBkg: "{{NODE_FILL}}",
+        stateLabelColor: "{{TEXT_COLOR}}",
+        transitionColor: "{{LINE_COLOR}}",
+        transitionLabelColor: "{{TEXT_COLOR}}",
+        cScale0: "{{START_FILL}}",
+        cScale1: "{{NODE_FILL}}",
+        cScale2: "{{DECISION_FILL}}",
+        cScale3: "{{OK_FILL}}",
+        cScale4: "{{DATA_FILL}}",
+        cScale5: "{{WARN_FILL}}",
+        cScale6: "{{START_FILL}}",
+        cScale7: "{{DECISION_FILL}}",
+        cScalePeer0: "{{START_STROKE}}",
+        cScalePeer1: "{{PRIMARY}}",
+        cScalePeer2: "{{DECISION_STROKE}}",
+        cScalePeer3: "{{OK_STROKE}}",
+        cScalePeer4: "{{DATA_STROKE}}",
+        cScalePeer5: "{{WARN_STROKE}}",
+        cScaleLabel0: "{{TEXT_COLOR}}",
+        cScaleLabel1: "{{TEXT_COLOR}}",
+        cScaleLabel2: "{{TEXT_COLOR}}",
+        cScaleLabel3: "{{TEXT_COLOR}}",
+        cScaleLabel4: "{{TEXT_COLOR}}",
+        cScaleLabel5: "{{TEXT_COLOR}}",
+        cScaleLabel6: "{{TEXT_COLOR}}",
+        cScaleLabel7: "{{TEXT_COLOR}}"
+      }
+    });
+  </script>
+</body>
+</html>

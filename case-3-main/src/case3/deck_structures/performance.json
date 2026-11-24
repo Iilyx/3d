@@ -1,0 +1,26 @@
+{
+  "id": "performance",
+  "label": "Bold Signal — Аналитика и эффективность",
+  "blurb": "15 макетов: Split-титул → траектория → Bento KPI → каналы → сравнение → роадмап → схема",
+  "default_pack": "signal",
+  "tone": "dark",
+  "slides": [10, 15],
+  "arc": [
+    "title",
+    "section",
+    "chart_hero",
+    "scorecard",
+    "chart_split",
+    "table_hero",
+    "stat_hero",
+    "card_row",
+    "compare",
+    "callout",
+    "timeline",
+    "media_split",
+    "media_hero",
+    "quote",
+    "closing"
+  ],
+  "signature": "chart-led · espresso & tangerine · bento signal"
+}

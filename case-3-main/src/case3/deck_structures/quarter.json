@@ -1,0 +1,26 @@
+{
+  "id": "quarter",
+  "label": "Dark Botanical — Две главы квартала и стратегия",
+  "blurb": "15 форматов: Ботанический изумруд и латунь → 2 главы → Bento 2×2 → вертикальная схема",
+  "default_pack": "botanical",
+  "tone": "dark",
+  "slides": [10, 15],
+  "arc": [
+    "title",
+    "section",
+    "callout",
+    "scorecard",
+    "chart_hero",
+    "card_row",
+    "stat_hero",
+    "section",
+    "compare",
+    "chart_split",
+    "table_hero",
+    "timeline",
+    "media_split",
+    "media_hero",
+    "closing"
+  ],
+  "signature": "hero bleed title + two brass chapters + 2x2 botanical scorecard + vertical flowchart"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "workshop",
+  "label": "Workshop",
+  "blurb": "Goals → agenda table → exercises → owners",
+  "default_pack": "studio",
+  "tone": "light",
+  "slides": [12, 15],
+  "arc": [
+    "title",
+    "section",
+    "scorecard",
+    "timeline",
+    "card_row",
+    "card_row",
+    "callout",
+    "table_hero",
+    "bullets",
+    "card_row",
+    "section",
+    "closing"
+  ],
+  "signature": "timeline agenda · exercise cards · ice indigo"
+}

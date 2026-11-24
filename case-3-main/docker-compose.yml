@@ -1,0 +1,40 @@
+services:
+  tex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: case-3:tex
+    profiles: ["tex-only"]
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    image: case-3:backend
+    restart: unless-stopped
+    shm_size: "1gb"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      CASE3_TEX_LOCAL: "1"
+      DASHBOARD_SERVICE_URL: "${DASHBOARD_SERVICE_URL:-http://host.docker.internal:8040}"
+      DASHBOARD_PUBLIC_URL: "${DASHBOARD_PUBLIC_URL:-http://127.0.0.1:8040}"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./runs:/app/runs
+      - ./local:/app/local
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    image: case-3:frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"

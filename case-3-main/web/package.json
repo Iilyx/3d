@@ -1,0 +1,29 @@
+{
+  "name": "case-3-web",
+  "private": true,
+  "version": "0.4.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test:helpers": "tsx --test src/liberRunHelpers.test.ts src/app/postJsonEdit.test.ts src/app/buildRunFormData.test.ts src/PipelineFlow.test.ts src/domain/slidesKick.test.ts src/domain/attachSlidesPayload.test.ts src/domain/craftSteps.test.ts src/diagramIr.test.ts src/diagramLayout.test.ts src/diagramLegend.test.ts src/diagramMetrics.test.ts src/diagramSlideSync.test.ts src/downloadDiagramPng.test.ts src/mermaidSvgInteract.test.ts src/softenMermaidSvg.test.ts src/reportHistory.test.ts src/domain/reportDownloads.test.ts src/domain/deckDownloads.test.ts src/domain/reportEditMode.test.ts src/domain/sourceDraftEdit.test.ts src/domain/tableSlideEdit.test.ts src/domain/deckUndo.test.ts src/domain/deckPlace.test.ts src/pdfFindPage.test.ts src/domain/renderMath.test.ts src/domain/reportMarkdown.test.ts src/domain/diagramCodeModal.test.ts src/repairMermaidSource.test.ts src/app/applyDiagramsUpdate.test.ts src/app/userPhotoArtifact.test.ts src/ConfirmModal.test.ts src/domain/priorRun.test.ts src/domain/userIntent.test.ts src/domain/stopRun.test.ts src/domain/chartTypeFit.test.ts src/domain/reportUndoJump.test.ts src/domain/takeInputFiles.test.ts src/domain/slideStrip.test.ts src/domain/sourceOfficeIngest.test.ts src/domain/dashboardCapture.test.ts src/domain/dashboardParse.test.ts src/domain/dashboardTables.test.ts src/domain/photoChip.test.ts src/domain/deckFromReport.test.ts src/domain/sourceCopy.test.ts src/domain/sourcePack.test.ts src/domain/sourcePlaque.test.ts src/domain/sourceRead.test.ts src/domain/undoChord.test.ts src/domain/memoryStrip.test.ts src/domain/openChat.test.ts src/domain/paperclipRoute.test.ts src/lightMd.test.ts src/app/workspaceId.test.ts src/domain/streamPacer.test.ts src/domain/chatScroll.test.ts"
+  },
+  "dependencies": {
+    "@xyflow/react": "^12.12.0",
+    "framer-motion": "^12.43.0",
+    "katex": "^0.16.47",
+    "mermaid": "^11.17.2",
+    "pdfjs-dist": "^4.10.38",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.23.15",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.0"
+  }
+}

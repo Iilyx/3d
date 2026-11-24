@@ -1,0 +1,18 @@
+# Build artifacts & local state
+.git
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+runs/
+local/
+workers/
+.code-review-graph/
+tests/
+docs/
+_qa/
+.env
+web/node_modules
+web/dist
+*.log
+.DS_Store

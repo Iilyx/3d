@@ -1,0 +1,26 @@
+{
+  "id": "council",
+  "label": "Workshop Studio — Архитектурный совет и воркшоп",
+  "blurb": "15 форматов: Баухаус-студия → панорамные графики → 2 главы → матрица решений → схема",
+  "default_pack": "studio",
+  "tone": "light",
+  "slides": [10, 15],
+  "arc": [
+    "title",
+    "section",
+    "callout",
+    "scorecard",
+    "chart_hero",
+    "card_row",
+    "stat_hero",
+    "section",
+    "compare",
+    "chart_split",
+    "bullets",
+    "timeline",
+    "media_split",
+    "media_hero",
+    "closing"
+  ],
+  "signature": "top-down widescreen chart & diagram stage + centered studio headers + 2x2 Bauhaus action board"
+}
